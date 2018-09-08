@@ -1,0 +1,20 @@
+<div class="container">
+    <button type="button" class="btn btn-outline-danger" style="float: right" (click)="close()">X</button>
+  <div class="row">
+    <div class="col-sm-4"><img style="width: 90%" src="{{book.photo}}" /></div>
+    <div class="col-sm-6">
+      <h3>{{book.name}}</h3>
+      <dl class="row">
+          <dt class="col-sm-3">Autor</dt>
+          <dd class="col-sm-9">{{book.author}}</dd>
+          <dt class="col-sm-3">Descripción</dt>
+          <dd class="col-sm-9">{{book.description}}</dd>
+          <dt class="col-sm-3">Páginas</dt>
+          <dd class="col-sm-9">{{book.pages}}</dd>
+          <dt class="col-sm-3">Precio</dt>
+          <dd class="col-sm-9">{{book.prize | currency: 'EUR' : true}}</dd>
+      </dl>
+      <button type="button" class="btn btn-lg btn-block btn-outline-primary" >Comprar</button>
+    </div>
+  </div>
+</div>

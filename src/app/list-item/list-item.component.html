@@ -1,0 +1,25 @@
+<div class="text-center jumbotron">
+    <h3>Productos</h3>
+</div>
+<div class="container">
+  <input  type="checkbox" [(ngModel)]="chkStock"> Solo en Stock
+  <input class="form-control form-control-lg" type="text" [(ngModel)]="filterText">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm" *ngFor="let book of printBooks | filterItems: chkStock: filterText">
+      <div class="card-header">
+          {{book.name}}
+      </div>
+      <div class="card-body">
+        <img style="width: 45%"  src="{{book.photo}}" />
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>{{book.author}}</li>
+            <li>{{book.description}}</li>
+            <li>{{book.prize | currency: 'EUR' : true}}</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary" (click)="onSelectItem(book)">Ver Detalle</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
