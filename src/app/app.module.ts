@@ -9,6 +9,7 @@ import { DetailItemComponent } from './detail-item/detail-item.component';
 import { FilterItemsPipe } from './filter-items.pipe';
 import { TranslatePipe } from './translate.pipe';
 import { HttpClientModule } from '@angular/common/http'
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

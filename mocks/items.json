@@ -1,7 +1,7 @@
 {
     "items" : [
         {
-            "key": 1, 
+            "id": 1, 
             "name": "Rebelión en la Granja", 
             "description": "Rebelión en la granja es una novela satírica del escritor británico George Orwell", 
             "author": "George Orwell", 
@@ -12,7 +12,7 @@
             "photo": "https://imagessl1.casadellibro.com/a/l/t0/51/9788499890951.jpg"
           },
           {
-            "key": 2, 
+            "id": 2, 
             "name": "Un Mundo Feliz", 
             "description": "Un mundo feliz es la novela más famosa del escritor británico Aldous Huxley", 
             "author": "Aldous Huxley", 
@@ -23,7 +23,7 @@
             "photo": "http://t3.gstatic.com/images?q=tbn:ANd9GcT0LvMFwN7ApsQlN6RMYc6prOXsg85jcWTa3kUwtWEU87DgwWTe"
           },
           {
-            "key": 3, 
+            "id": 3, 
             "name": "El Señor de las Moscas", 
             "description": "El señor de las moscas es la primera y más célebre novela de William Golding", 
             "author": "William Golding", 
