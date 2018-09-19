@@ -1,4 +1,3 @@
+
 <app-navbar  (onSelectMenu)="showPage($event)"></app-navbar>
-<app-welcome *ngIf="!showList"></app-welcome>
-<app-list-item *ngIf="showList" (onSelectedItem)="showDetailItem($event)"></app-list-item>
-<app-detail-item *ngIf="book" [book]="book" (onCloseDetail)="showListItems($event)"></app-detail-item>
+<router-outlet></router-outlet>

@@ -1,34 +1,38 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Books } from '../Books';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Book } from '../Book';
 import { ItemsServiceService } from '../../api/items-service.service';
-import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-item',
   templateUrl: './list-item.component.html'
 })
-export class ListItemComponent implements OnInit {
+export class ListItemComponent implements OnInit, OnDestroy {
 
-  printBooks: Observable<Books[]>
+  printBooks:Book[]
   chkStock: boolean
+  subscription: Subscription
 
-  @Output() onSelectedItem: EventEmitter<Books>
+  //@Output() onSelectedItem: EventEmitter<Book>
 
-  constructor(private api: ItemsServiceService) {
-    this.onSelectedItem = new EventEmitter
+  constructor(private api: ItemsServiceService, private router: Router) {
+    //this.onSelectedItem = new EventEmitter
    
-    this.api.getItems().subscribe(x => {
-      this.printBooks = x
-      console.log(this.printBooks)
+    this.api.getItems().subscribe((response: Book[]) => {
+        this.printBooks = response
     })
- 
-
    }
 
   ngOnInit() {
   }
 
-  onSelectItem(book: Books){
-    this.onSelectedItem.emit(book)
+  ngOnDestroy(){
+    //this.subscription.unsubscribe()
+  }
+
+  onSelectItem(book: Book){
+    this.router.navigate(['/items', book.id])
+    //this.onSelectedItem.emit(book)
   }
 }

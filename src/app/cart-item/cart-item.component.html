@@ -1,0 +1,35 @@
+<div class="container" *ngIf="cartItems | async; let items">
+  <table class="table" *ngIf="items.length; else noItems ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <th scope="row">
+          <img src="{{item.photo}}" width="5%">
+          {{item.name}}
+          <small>{{item.author}}</small>
+        </th>
+        <td>
+          <app-quantity-item [id]="item.id" [quantity]="item.quantity" (quantityOut)="getQuantity(item.id, $event)"></app-quantity-item>
+        </td>
+        <td>
+          {{item.quantity * item.prize | currency: item.currency}}
+        </td>
+        <td>
+            <button type="button" class="btn btn-danger" (click)="deleteItemCart(item.id)">X</button>          
+        </td>
+      </tr>
+    </tbody>
+    {{getTotalAmount(items) | currency: 'EUR' }}
+  </table>
+  
+  </div>
+  <ng-template #noItems>
+    <h5 class="text-center">No hay productos</h5>
+  </ng-template>

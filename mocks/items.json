@@ -1,37 +1,43 @@
 {
-    "items" : [
-        {
-            "id": 1, 
-            "name": "Rebelión en la Granja", 
-            "description": "Rebelión en la granja es una novela satírica del escritor británico George Orwell", 
-            "author": "George Orwell", 
-            "prize": 19.99, 
-            "currency": "€", 
-            "pages": 220, 
-            "stock": true,
-            "photo": "https://imagessl1.casadellibro.com/a/l/t0/51/9788499890951.jpg"
-          },
-          {
-            "id": 2, 
-            "name": "Un Mundo Feliz", 
-            "description": "Un mundo feliz es la novela más famosa del escritor británico Aldous Huxley", 
-            "author": "Aldous Huxley", 
-            "prize": 17.95, 
-            "currency": "€", 
-            "pages": 135, 
-            "stock": true,
-            "photo": "http://t3.gstatic.com/images?q=tbn:ANd9GcT0LvMFwN7ApsQlN6RMYc6prOXsg85jcWTa3kUwtWEU87DgwWTe"
-          },
-          {
-            "id": 3, 
-            "name": "El Señor de las Moscas", 
-            "description": "El señor de las moscas es la primera y más célebre novela de William Golding", 
-            "author": "William Golding", 
-            "prize": 23.56, 
-            "currency": "€", 
-            "pages": 300, 
-            "stock": false,
-            "photo": "http://t2.gstatic.com/images?q=tbn:ANd9GcQ2JYVlrfxYWPKa1w3TtBqY30bjYY4IrMSfT2vNsCPU845A1OwY"
-          }
-    ]
+  "items": [
+    {
+      "id": 1,
+      "name": "Rebelión en la Granja",
+      "description": "Rebelión en la granja es una novela satírica del escritor británico George Orwell",
+      "author": "George Orwell",
+      "prize": "20",
+      "currency": "€",
+      "pages": 220,
+      "stock": true,
+      "photo": "https://imagessl1.casadellibro.com/a/l/t0/51/9788499890951.jpg",
+      "long": "En la ficción de la novela un grupo de animales de una granja expulsa a los humanos tiranos y crea un sistema de gobierno propio que acaba convirtiéndose en otra tiranía brutal. Orwell, un socialista democrático y durante muchos años un miembro del Partido Laborista Independiente, fue un crítico de Stalin. La novela fue escrita durante la Segunda Guerra Mundial y, aunque publicada en 1945, no comenzó a ser conocida por el público hasta finales de los años 1950.",
+      "rate": 8
+    },
+    {
+      "id": 2,
+      "name": "Un Mundo Feliz",
+      "description": "Un mundo feliz es la novela más famosa del escritor británico Aldous Huxley",
+      "author": "Aldous Huxley",
+      "prize": 17.95,
+      "currency": "€",
+      "pages": 135,
+      "stock": true,
+      "photo": "http://t3.gstatic.com/images?q=tbn:ANd9GcT0LvMFwN7ApsQlN6RMYc6prOXsg85jcWTa3kUwtWEU87DgwWTe",
+      "long": "La importancia del libro en la vida de Huxley lo lleva a escribir más adelante (1958) un libro de ensayos y consideraciones relativas bautizado como Nueva visita a un mundo feliz (Return to Brave New World), donde aborda detalladamente los diferentes problemas socio económicos que dieron impulso a la creación de su novela futurista. Un mundo feliz ocupa el quinto puesto en la lista de las 100 mejores novelas de la Modern Library del siglo XX.",
+      "rate": 3
+    },
+    {
+      "id": 3,
+      "name": "El Señor de las Moscas",
+      "description": "El señor de las moscas es la primera y más célebre novela de William Golding",
+      "author": "William Golding",
+      "prize": 23.56,
+      "currency": "€",
+      "pages": 300,
+      "stock": false,
+      "photo": "http://t2.gstatic.com/images?q=tbn:ANd9GcQ2JYVlrfxYWPKa1w3TtBqY30bjYY4IrMSfT2vNsCPU845A1OwY",
+      "long": "Publicada en 1954, se considera un clásico de la literatura inglesa de postguerra. Tuvo apenas difusión en el año de su publicación, manteniendo un volumen escaso de ventas. Años más tarde, alcanzó una gran fama en Inglaterra, considerándose imprescindible su lectura en colegios e institutos. El título alude a la maldad humana, representada por Belcebú, deidad filistea y posteriormente también perteneciente a la iconografía cristiana, que es conocido por este sobrenombre de Señor de las Moscas.",
+      "rate": 4
+    }
+  ]
 }

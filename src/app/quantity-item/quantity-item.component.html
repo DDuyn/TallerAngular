@@ -1,0 +1,11 @@
+<div class="input-group mb-3" style="width: 55%;">
+  <div class="input-group-prepend">
+      <button type="button" class="btn btn-outline-secondary" *ngIf="quantity > 1" (click)="decrementQuantity(id)">-</button>
+  </div>
+  <div class="custom-file">
+      <input type="number" class="form-control" [(ngModel)]="quantity" (change)="changeQuantity(id, quantity)">
+  </div>
+  <div class="input-group-append">
+      <button type="button" class="btn btn-outline-secondary" (click)="incrementQuantity(id)">+</button>
+  </div>              
+</div>

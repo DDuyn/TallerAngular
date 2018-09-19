@@ -8,11 +8,21 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#" (click)="showMenu('Home')">{{'home' | translate: selectedLang}} <span class="sr-only">(current)</span></a>
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">{{'home' | translate}} <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" (click)="showMenu('Links')">Enlaces</a>
+        <a routerLink="/items" class="nav-link">{{'products' | translate}}</a>
       </li>
+      <li class="nav-item">
+          <a routerLink="/login" class="nav-link">Login</a>
+        </li>
+      <li class="nav-item">
+          <a routerLink="/cart" class="nav-link" >Carrito
+              <span class="badge badge-light">
+                  {{ cartLength }}
+                </span>
+          </a>
+        </li>
       <li class="nav-item dropdown">
         <div class="dropdown">
             <select class="form-control" [(ngModel)]="selectedLang" (change)="changeLang()">

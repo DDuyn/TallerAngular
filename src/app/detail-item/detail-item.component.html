@@ -1,20 +1,51 @@
+<div *ngIf="showInfoCart" class="alert alert-info" role="alert">
+  Añadido al carrito
+</div>
 <div class="container">
-    <button type="button" class="btn btn-outline-danger" style="float: right" (click)="close()">X</button>
-  <div class="row">
-    <div class="col-sm-4"><img style="width: 90%" src="{{book.photo}}" /></div>
-    <div class="col-sm-6">
-      <h3>{{book.name}}</h3>
-      <dl class="row">
-          <dt class="col-sm-3">Autor</dt>
-          <dd class="col-sm-9">{{book.author}}</dd>
-          <dt class="col-sm-3">Descripción</dt>
-          <dd class="col-sm-9">{{book.description}}</dd>
-          <dt class="col-sm-3">Páginas</dt>
-          <dd class="col-sm-9">{{book.pages}}</dd>
-          <dt class="col-sm-3">Precio</dt>
-          <dd class="col-sm-9">{{book.prize | currency: 'EUR' : true}}</dd>
-      </dl>
-      <button type="button" class="btn btn-lg btn-block btn-outline-primary" >Comprar</button>
-    </div>
+  <button type="button" class="btn btn-outline-danger" style="float: right" (click)="close()">X</button>
+<div class="row">
+  <div class="col-sm-4"><img style="width: 90%" src="{{book.photo}}" /></div>
+  <div class="col-sm-6">
+    <h3>{{book.name}}</h3>
+    <dl class="row">
+        <dt class="col-sm-3">Autor</dt>
+        <dd class="col-sm-9">{{book.author}}</dd>
+        <dt class="col-sm-3">Descripción</dt>
+        <dd class="col-sm-9">{{book.description}}</dd>
+        <dt class="col-sm-3">Páginas</dt>
+        <dd class="col-sm-9">{{book.pages}}</dd>
+        <dt class="col-sm-3">Precio</dt>
+        <dd class="col-sm-9">{{book.prize | currency: 'EUR' : true}}</dd>
+        <dd class="col-sm-9">
+          <button type="button" style="margin-right: 5px;" class="btn btn-info" (click)="openModalWithClass(template)">Info</button>
+          <button [disabled]="quantity < 1" type="button" class="btn btn-success" (click)="addItemToCart(book); " >Comprar</button>
+          <app-quantity-item [id]="book.id" [quantity]="quantity" (quantityOut)="getQuantity($event)"></app-quantity-item>
+        </dd>
+    </dl>         
+      <div>
+        <rating [max]="10" [(ngModel)]="y" [customTemplate]="tt"></rating>
+        <b>(<i>Rate:</i> {{y}})</b>
+        <ng-template #tt let-i="index" let-v="value">
+          <button class="btn btn-{{i < v ? 'warning' : 'default'}}" (click)="rate()">
+            {{i < v ? '&#9733;' : '&#9734;'}}
+          </button>
+        </ng-template>
+      </div>
+    
+    
   </div>
 </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{book.name}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    {{book.long}}
+  </div>
+</ng-template>
+

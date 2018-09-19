@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, URLSearchParams } from '@angular/http'
+import {HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { map } from 'rxjs/operators'
+import { Book } from '../app/Book'
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,18 @@ export class ItemsServiceService {
 
   private baseURL = 'http://localhost:3000'
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-    public getItems(): Observable<any> {
-      return this.http.get(`${this.baseURL}/items`, { headers: this.getHeaders()})
-        .pipe(map(x => x.json()))
+    public getItems(): Observable<Book[]> {
+      return this.http.get<Book[]>(`${this.baseURL}/items`)
     }
 
-    public getItem(id: number): Observable<any> {
-      return this.http.get(`${this.baseURL}/items/${id}`, {headers: this.getHeaders()})
-        .pipe(map(x => x.json()))
+    public getItem(id: number): Observable<Book> {
+      return this.http.get<Book>(`${this.baseURL}/items/${id}`)
     }
 
-    private getHeaders() {
-      let headers = new Headers()
-      headers.append('Accept', 'application/json')
-      return headers
+    public updateItem(book: Book): Observable<Book>{
+      return this.http.put<Book>(`${this.baseURL}/items/${book.id}`, book)
+     
     }
-
-
 }

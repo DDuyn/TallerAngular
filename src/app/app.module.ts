@@ -1,33 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { ListItemComponent } from './list-item/list-item.component';
-import { DetailItemComponent } from './detail-item/detail-item.component';
-import { FilterItemsPipe } from './filter-items.pipe';
 import { TranslatePipe } from './translate.pipe';
 import { HttpClientModule } from '@angular/common/http'
-import { HttpModule } from '@angular/http';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { LoginComponent } from './login/login.component';
+import { AppRouterModule } from './app-router/app-router.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     WelcomeComponent,
-    ListItemComponent,
-    DetailItemComponent,
-    FilterItemsPipe,
-    TranslatePipe
+    TranslatePipe,
+    CartItemComponent,
+    LoginComponent
   ],
   imports: [
+    CoreModule,
+    AppRouterModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    SharedModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+				  <span class="input-group-text" id="basic-addon1">@</span>
+				</div>
+				<input type="text" [(ngModel)]="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<input type="password" [(ngModel)]="password" class="form-control" placeholder="password" aria-describedby="passwordHelpInline">			
+				<small id="passwordHelpInline" class="text-muted">Must be 8-20 characters long.</small>		
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<button type="button" class="btn btn-primary mb-2" (click)="checkLogin()">Login</button>
+		</div>
+	</div>
+</div>

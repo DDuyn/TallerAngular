@@ -1,8 +1,9 @@
 import { Component, OnChanges } from '@angular/core';
-import { Books } from './Books'
+import { Book } from './Book'
 import { LanguageService } from './language.service';
 import { ItemsServiceService } from '../api/items-service.service';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core'
 
 
 @Component({
@@ -11,19 +12,16 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnChanges{
   title = 'devShop';
-  book: Books
+  book: Book
   showList: boolean
-  response: string
-  responseO: Observable<string>
-
-constructor(private languageService: LanguageService, private api: ItemsServiceService){
-  this.languageService.setLanguage('es')
-  this.showList = false
-
-  this.api.getItem(1).subscribe(x => {
-    this.response = x
-    console.log('Respuesta', this.response['name'])
-  })
+  showCart: boolean
+  showDetail: boolean
+  showWelcome: boolean
+  
+constructor(private translate: TranslateService){
+  //this.languageService.setLanguage('es')
+  translate.setDefaultLang('es')
+  translate.use('es')
 
 }
 
@@ -31,8 +29,7 @@ ngOnChanges(){
   
 }
 
-
-  showDetailItem(event: Books){
+  showDetailItem(event: Book){
     this.book = event
     this.showList = false
   }
@@ -40,14 +37,6 @@ ngOnChanges(){
   showListItems(event: boolean){
       this.book = null
       this.showList = event
-  }
-
-  showPage(event: string){
-    if (event == 'Home'){
-      this.showList = false
-    }else if (event == 'Links'){
-      this.showList = true
-    }
   }
 
 }
